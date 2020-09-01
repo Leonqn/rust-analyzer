@@ -46,7 +46,6 @@ export function createClient(serverPath: string, cwd: string, extraEnv: Env): lc
     const clientOptions: lc.LanguageClientOptions = {
         documentSelector: [{ scheme: 'file', language: 'rust' }],
         initializationOptions: vscode.workspace.getConfiguration("rust-analyzer"),
-        diagnosticCollectionName: "rustc",
         traceOutputChannel,
         middleware: {
             async provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, _next: lc.ProvideHoverSignature) {
